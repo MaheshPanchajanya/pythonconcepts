@@ -1,0 +1,126 @@
+--------- python ---------------------------
+
+python is   object oriented language. and it is interpreted language.
+
+python .py files are executed where source code is converted to byte code during this compiler creates .pyc file which translation of bytecode is done 
+
+single line comment - #comment
+multiline comment - """ comment """
+
+
+variables in python are case sensitive -  eg : x = 10 , y = 20
+
+we can assign multiple values to variables in python x ,y ,z = 1, 2, 3
+
+
+
+z = "string"
+
+types of variables in python 
+
+global variable, local variable
+
+you can create a variable inside a function and you can make it access within the program scope anywhere by 
+using keyword global
+
+eg : global varname 
+ 
+
+python data types  :  
+
+> text - string
+> numeric - int, long, float, double
+> sequence - list, tuple, range
+> maping - dict
+> set types - set and frozen zet  
+> boolean - bool
+> binary - bytes , bytearray, memoryview
+
+
+ to find type of an data type in python use:
+ 
+ > keyword - type(variable)
+ 
+ python casting - to convert one type to another datatype 
+ 
+ > strings in python :
+ strings in pythons are arrays of bytes representing unicode characters
+ 
+ > to get length of string : len(str)
+ 
+ > string slicing  -  eg  a = "hello" > slice a[1:2]
+ 
+ > string modification : upper - str.upper(),str.lower() > 
+ 
+ > strip() - removes white space from the string at begining or end - eg :m = "strings" > m.strip()
+ 
+ > replcae() - replaces a string with anothee string 
+ 
+ > split() - it splits string to sub string
+ 
+ > python string concatination is done by >  +
+ 
+ > concating other datatype with string is done by string format :
+
+eg : 
+     x = 35
+     y = "my age is {}"
+     print(y.format(x))	 
+	 
+> methods :
+
+> captilalize() -uppercase the first character in the string
+eg : firstname = "mahesh" > firstname.capitalize() > output : Mahesh
+
+> casefold() - converts all the characters in the string to lower case
+ eg : x = "welcome to ,world" > x.casefold()
+ 
+ >center() , count() > specifies no of times appeared in a string
+ 
+ >endswith() - returns tue character ends with particular string
+ 
+ >find() - it seach for specific value in string and returns the position 
+ 
+ >Note - difference between find() and index() is where find does not rise any exception but index raise exception when particular string not found.
+ 
+ >join()  - swapcase() - does vice versa of upper or lower case
+ 
+ ####### List concept ############
+ 
+ list is collection of items which is :
+ >ordered 
+ >changable 
+ >allow duplication
+ 
+ eg : li = [1,2,3,"banana","cherry"]
+ 
+ > methods
+ > insert() - used to insert and element to list in specific position without any existing change
+ > append() - to add item at the end of the list 
+ > extend() - to append entire list to another list
+ > remove() - specified item from the list 
+ > pop() - removes specified item if not index given by default it removes last item
+ > to remove or clear enitre content in list = list.clear()
+ > list comphrehension very powerful concept in python
+ > sort() - sorts the list by default Ascending to sort descending add parameter > li.sort(reverse=True)
+ > copy() - makes a copy of an list in another list
+ 
+ 
+ ######## Tuple concepts #########
+ 
+ tuples are collection of items which are:
+ >ordered 
+ >unchangable 
+ >allows duplication
+ 
+ tuple use curve brace (1,2,3)
+ 
+ #### set ##########
+ 
+sets are >unordered >unchangable > no duplications
+
+methods : add(), update(), remove(), discard(), pop(),clear(), del,union()
+
+### dictionary #####
+
+collection of elements ordered > changable > does not allow duplication
