@@ -154,3 +154,11 @@ a = lambda x,y : x + y
 array in python 
 
 python does not support built i array where lists can be implemented as arrays.
+
+### file handling in python #####
+
+> open()
+
+>f.read(),f.write(),f.readline(),f.close()
+
+>import os > os.path.exist("path") > os.remove("name")
