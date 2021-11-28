@@ -162,3 +162,59 @@ python does not support built i array where lists can be implemented as arrays.
 >f.read(),f.write(),f.readline(),f.close()
 
 >import os > os.path.exist("path") > os.remove("name")
+
+""" python modules """ 
+
+create pytohn file and import anywhere 
+
+eg :
+     package.py - file 
+
+     from file import module
+
+
+########## object oriented concepts in python ##########
+
+object > behaviour and attribute
+
+functions in object oriented programing are methods .
+
+object , classs
+
+>encapsulation
+>Abstraction
+>polymorphism
+>inheritance
+
+to declare class -
+
+class Nameofclass:
+    def config(self):
+        print("im method in class computer")
+
+to create object for class 
+
+com1 = Computer()
+
+to acess the method of the class - object.methidName()
+oryou can acess durectly using class name - ClassName().Method()
+
+Note : Self is nothing but instance of class.
+
+__init__ Method
+its nothing but like constructor
+> it will be called automatically when object is created
+def __init__(self,args):
+
+> constructor in python 
+
+objects are stored in heap memory
+
+heap memory is a temporary memory 
+
+empty class in python and pass
+
+Class Name:
+     pass 
+     
+     >use pass keyword for empty method or class to avoid exception
