@@ -218,3 +218,63 @@ Class Name:
      pass 
      
      >use pass keyword for empty method or class to avoid exception
+     
+     >def __init__(self) -- constructor
+
+two difference variable in oops
+
+>instance variable - as object changes  value also change, it is declared inside the __init__ method
+>static variable -  static variable declared outside the __init__ and inside the class .
+
+ eg :class Car: instance variable
+       def __init__(self):
+           self.mil = 10
+           self.comp = "BMW"
+
+
+eg : class car: static variable 
+         
+         wheels  = 4
+         
+         def __init__(self,name,model):
+               self.name=name
+               self.model = model
+
+namespace :
+   >class namespace
+   >object namespace
+
+types of methods:
+
+acessors >  to fetch the value of instance variable.
+mutators  > to modify the value of instance variable.
+like geters and seters
+
+class method - use cls keyword to user class variable inside class method 
+
+static method - to use static method you have to use decorator @staticmethod
+
+Note :  to call the class use decorators
+
+    @classmethod - decorator
+eg  def methodname(cls):
+          exp1....
+          exp...n
+
+static method:
+
+ @staticmethod - decorator
+eg  def methodname(cls):
+          exp1....
+          exp...n
+
+inner class :
+
+class inside an class
+ eg :
+    class Student:
+       pass
+        self.lap = self.Laptop() or outside class > l = Student.Laptop() 
+       class laptop: 
+
+Note :declare object for laptop inside instance method of main class

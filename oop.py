@@ -15,12 +15,41 @@ print(Computer().config()) #Acess without object
  # __init__ method 
 
 class Laptop:
-    def __init__(self,cpu,ram):
-        self.processor = cpu
+     
+    graphics = "Galax1060ti" 
+    
+    def __init__(self,cpu,ram,price): # constructor 
+        self.processor = cpu # instance variable
         self.ram = ram
+        self.rate = price
 
+   
     def config(self):
-        print(self.processor,self.ram)
+        print(self.processor,self.ram,self.rate,self.graphics)
+    
+    def compare(self,cmp):
+        if self.rate > cmp.rate:
+            return True
+        else:
+            return False      
 
-l1 = Laptop("Amd","8gb")
+    #@staticmethod
+    @classmethod
+    def speed(cls):
+
+        cls.li = [1,3,4,5]
+
+        cls.li.sort(reverse=True)
+        print(cls.li)
+
+l1 = Laptop("Amd","8gb",35000)
+l2 = Laptop("intel","8gb",4000)
+
+
 l1.config()
+l2.config()
+Laptop.speed()
+
+if l1.compare(l2):
+    print("amd is lesser")
+
