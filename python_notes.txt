@@ -179,7 +179,7 @@ object > behaviour and attribute
 
 functions in object oriented programing are methods .
 
-object , classs
+object , class
 
 >encapsulation
 >Abstraction
@@ -278,3 +278,56 @@ class inside an class
        class laptop: 
 
 Note :declare object for laptop inside instance method of main class
+
+inheritance in oops :
+
+>single level inheritance :
+a class inheriting only single base class .
+
+eg:
+   class A:
+     |
+   Class B(A)
+
+>multilevel inheritance :
+a class inherting two base class .
+
+eg :
+
+class A:
+   |
+class B(A):
+    |
+class C(B):
+
+>multiple inheritance:
+ a class inheriting two or more base class.
+
+ class A:
+     |
+ class B:
+     |
+ class C(A,B)
+
+constructor in inheritance : also called method resolution order MRO.
+
+Note - super key word to acess all the feature of super class
+
+eg :
+
+super().init()
+
+to resolve unbaised thing we use MRO 
+even we can use super method.
+
+polymorphism in oops: one thing can take multiple forms.
+
+object can have multiple forms
+
+>duck typing
+.execute()
+>operator overloading
+>method overloading
+>method overriding
+
+
