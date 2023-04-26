@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Nova Technosys</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:rgb(0, 123, 255);">
+            <a class="navbar-brand" href="\">Nova Technosys</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+           
+            <!-- Navbar-->
+            
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" >
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                {% for stark in cognizent %}{{stark.companyname}}{% endfor %}
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                      
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                e-Invoice Integration
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        e - invoice
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav" >
+                                            <a class="nav-link" href="login.html">IRN Generation</a>
+                                            <a class="nav-link" href="login.html">Tally to any database</a>
+                                            
+                                        </nav>
+                                    </div>
+                                   
+                                    
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Navigate</div>
+                            <a class="nav-link" href="\"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                                  </svg>  Home</a>
+                                  <a class="nav-link" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                  </svg> {{user.username}}</a>
+                                  
+                                  <a class="nav-link" href="users/logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                    <path d="M7.5 1v7h1V1h-1z"/>
+                                    <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+                                  </svg> Logout</a>
+
+                          
+                        </div>
+                    </div>
+                    
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                          </svg> Excel to Tally Prime/ERP upload</h1>
+
+                        <br>
+                        {% if success %}
+                        <center>
+                          
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                            </svg> <h6 style="font-weight:bold;color:green;">{{success}}</h6>
+                       </center>
+                        {% else %}
+                        <!----butter nan-->
+                        {% endif %}
+                        <div id="layoutAuthentication">
+                            <div id="layoutAuthentication_content">
+                                <main>
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-5">
+                                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                                    <div class="card-header"><h3 class="text-center font-weight-light my-4"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                                        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                                      </svg></h3></div>
+                                                    <div class="card-body">
+                                                        <form method="POST" enctype="multipart/form-data"  class="needs-validation"  id="form" novalidate>
+                                                          {% csrf_token %}
+                                                            <div class="form-group">
+                                                                <label class="small mb-1" for="inputEmailAddress">Hostname</label>
+                                                                <input class="form-control  input-sm" id="inputEmailAddress" name="hname" id="hst" type="text" placeholder="Hostname" required/>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="small mb-1" for="inputPassword">port</label>
+                                                                <input class="form-control  input-sm" id="inputPassword" name="port" id="prt" type="text" placeholder="Port" required/>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="small mb-1" for="inputPassword">select type</label>
+                                                                <select id="inputState" class="form-control" name="typein" required>
+                                                                    <option selected>upload type</option>
+                                                                    <option>Sales order</option>
+                                                                    <option>DC</option>
+                                                                    <option>Sales</option>
+                                                                    <option>Purchase order</option>
+                                                                    <option>GRN</option>
+                                                                    <option>Purchase</option>
+                                                                    <option>Credit Note</option>
+                                                                    <option>Debit Note</option>
+                                                                    <option>Journal</option>
+                                                                    <option>Stock item</option>
+                                                                    <option>Ledger</option>
+                                                                    
+                                                                  </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                
+                                                                <input type="file" class="form-control-file border" id= "file1" name="filename" required>
+                                                            </div>
+                                                            <center>
+                                                            <div class="form-group">
+                                                            <div class="spinner-grow text-success" role="status" id="loader" style="display: none;">
+                                                                <span class="sr-only">Loading...</span>
+                                                              </div>
+                                                            </div></center>
+                                                           
+                                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                                
+                                                                <button type="submit" class="btn btn-primary">upload</button>
+                                                            </div>
+                                                            
+                                                            
+                                                        </form>
+                                                    </div>
+                                                    <div class="card-footer text-center">
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </main>
+                            </div>
+                          
+                        
+                            
+                              
+                    </div>
+
+                    {% if conn %}
+                    <script>alert("{{conn}}")</script>
+                    {% else %}
+                    <!----butter nan-->
+                    {% endif %}
+                    
+                   
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Nova Technosys</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'assets/demo/chart-area-demo.js' %}"></script>
+        <script src="{% static 'assets/demo/chart-bar-demo.js' %}"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'assets/demo/datatables-demo.js' %}"></script>
+        <script>
+            var spinner = $('#loader');
+           $(document).on('submit','#form',function(e){
+               //e.preventDefault();
+               spinner.show();
+               $.ajax({
+                   url:'{% url "uploads" %}',
+                   data:{
+                      filename:$('#file1').get(0).files[0],  
+                      hname:$('#hst').val(),
+                      port:$('#prt').val(),
+                      typeof:$('#inputState').val(),
+                      csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                      dataType: 'JSON'
+                    },
+                    method:"POST",
+                   
+                    success: function(data)
+                    {
+                    spinner.hide();
+                    //console.log(data)
+                    }
+               });
+               
+           });
+           
+            </script>
+        
+    </body>
+</html>

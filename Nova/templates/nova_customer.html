@@ -1,0 +1,295 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Nova Technosys</title>
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:rgb(0, 123, 255);">
+            <a class="navbar-brand" href="\">Nova Technosys</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+           
+            <!-- Navbar-->
+            
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" >
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                {% for stark in cognizent %}{{stark.companyname}}{% endfor %}
+                            </a>
+                            
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                              <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                             Dashboard
+                              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                          </a>
+                          <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                              <nav class="sb-sidenav-menu-nested nav">
+
+                                  <a class="nav-link" href="dashboard">Analysis</a>
+                                  
+                                  
+                              </nav>
+                          </div>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                               Tally Data Integrations
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+
+                                    <a class="nav-link" href="{% url 'uploads' %}?data={{user.id}}">Excel to Tally Prime/ERP upload</a>
+                                    
+                                    
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                e-Invoice Integration
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        e - invoice
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav" >
+                                            <a class="nav-link" href="{% url 'any' %}?data={{user.id}}">IRN Generation</a>
+                                            <a class="nav-link" href="">Tally to any database</a>
+                                            
+                                        </nav>
+                                    </div>
+                                   
+                                    
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Navigate</div>
+                            <a class="nav-link" href="\"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                                  </svg>  Home</a>
+                                  <a class="nav-link" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                  </svg> {{user.username}}</a>
+                                  
+                                  <a class="nav-link" href="users/logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                    <path d="M7.5 1v7h1V1h-1z"/>
+                                    <path d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z"/>
+                                  </svg> Logout</a>
+
+                          
+                        </div>
+                    </div>
+                    
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-menu-button-wide-fill" viewBox="0 0 16 16">
+                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v2A1.5 1.5 0 0 0 1.5 5h13A1.5 1.5 0 0 0 16 3.5v-2A1.5 1.5 0 0 0 14.5 0h-13zm1 2h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1zm9.927.427A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0l-.396-.396zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+                          </svg> My company</h1>
+                        <br>
+                        <div class="row">
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-20">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area mr-1"></i>
+                                        {% for stark in cognizent %}{{stark.companyname}}{% endfor %}
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-row">
+                                                
+                                                <div class="form-group col-md-6">
+                                                    <div class="input-group mb-3 input-group-sm">
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text">Tally.net ID</span>
+                                                       </div>
+                                                <input type="mail" class="form-control" id="email" placeholder="" name="email" value="{% for stark in cognizent %}{{stark.tallynetid}}{% endfor %}" readonly>
+                                               </div>
+                                                </div>
+                                                
+                                                <div class="form-group col-md-6">
+                                                    
+                                                        <div class="input-group mb-3 input-group-sm">
+                                                            <div class="input-group-prepend">
+                                                              <span class="input-group-text">Phone number</span>
+                                                           </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="phno" value="{% for stark in cognizent %}{{stark.phoneno}}{% endfor %}" readonly>
+                                              </div>
+                                              </div>
+                                              <div class="form-group col-md-6">
+                                                
+                                                    <div class="input-group mb-3 input-group-sm">
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text">Tally serial no</span>
+                                                       </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="serialno" value="{% for stark in cognizent %}{{stark.tallyserialno}}{% endfor %}" readonly>
+                                              </div>
+                                                </div>
+                                             
+                                              <div class="form-group col-md-6">
+                                                
+                                                    <div class="input-group mb-3 input-group-sm">
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text">Address1</span>
+                                                       </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="addr1" value="{% for stark in cognizent %}{{stark.address1}}{% endfor %}" readonly>
+                                              </div>
+                                                </div>
+                                              <div class="form-group col-md-6">
+                                                
+                                                    <div class="input-group mb-3 input-group-sm">
+                                                        <div class="input-group-prepend">
+                                                          <span class="input-group-text">Address 2</span>
+                                                       </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="addr2" value="{% for stark in cognizent %}{{stark.address2}}{% endfor %}" readonly>
+                                              </div>
+                                                </div>
+                                             
+                                              <div class="form-group col-md-6">
+                                                <div class="input-group mb-3 input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text">PAN</span>
+                                                   </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="PAN" value="{% for stark in cognizent %}{{stark.pan}}{% endfor %}" readonly>
+                                              </div>
+                                              </div>
+                                              <div class="form-group col-md-6">
+                                                <div class="input-group mb-3 input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text">GST TIN</span>
+                                                   </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="GST" value="{% for stark in cognizent %}{{stark.gsttin}}{% endfor %}" readonly>
+                                              </div>
+                                              </div>
+                                              
+                                              <div class="form-group col-md-6">
+                                                <div class="input-group mb-3 input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text">city</span>
+                                                   </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="city" value="{% for stark in cognizent %}{{stark.city}}{% endfor %}" readonly>
+                                              </div>
+                                              </div>
+                                              <div class="form-group col-md-6">
+                                                <div class="input-group mb-3 input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text">State</span>
+                                                   </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="state" value="{% for stark in cognizent %}{{stark.state}}{% endfor %}" readonly>
+                                              </div>
+                                              </div>
+                                              
+                                              <div class="form-group col-md-6">
+                                                <div class="input-group mb-3 input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                      <span class="input-group-text">zip code</span>
+                                                   </div>
+                                                <input type="text" class="form-control" id="email" placeholder="" name="zip" value="{% for stark in cognizent %}{{stark.zip}}{% endfor %}" readonly>
+                                              </div>
+                                              </div>
+                                            </div>
+                                          </form> 
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                              </svg>
+                               User Details
+                            </div>
+                            <div class="card-body">
+                              <div class="container">
+                              <table class="table">
+                                <thead class="thead-dark">
+                                  <tr>
+                                    <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                    </svg> Username</th>
+                                    <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                      <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                    </svg> Firstname</th>
+                                    <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                      <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                    </svg> Lastname</th>
+                                    <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
+                                      <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
+                                      <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146l-.853-.854zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0z"/>
+                                    </svg> Email</th>
+                                    <th><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                                      <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                                    </svg> Company Name</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.first_name}}</td>
+                                    <td>{{user.last_name}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{% for stark in cognizent %}{{stark.companyname}}{% endfor %}</td>
+                                    
+                                  </tr>  
+                                </tbody>
+                              </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Nova Technosys</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'assets/demo/chart-area-demo.js' %}"></script>
+        <script src="{% static 'assets/demo/chart-bar-demo.js' %}"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'assets/demo/datatables-demo.js' %}"></script>
+    </body>
+</html>
